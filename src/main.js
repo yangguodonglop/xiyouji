@@ -15,6 +15,17 @@ import common from "./common/js/util.js";
 Vue.prototype.common = common
 Vue.use(rem)
 import './common/css/reset.less'
+import VueI18n from 'vue-i18n'
+Vue.use(VueI18n)
+
+const i18n = new VueI18n({
+  locale: 'zh',
+  messages: {
+    'zh': require('@/assets/languages/zh.json'),
+    'en': require('@/assets/languages/en.json')
+  }
+})
+
 //  import './assets/css/mui.less'
 //  import mui from './assets/js/mui.js'
 //  Vue.prototype.mui = mui
@@ -53,6 +64,7 @@ import 'babel-polyfill'
 new Vue({
   el: '#app',
   router,
+  i18n,
 
   render: h => h(App)
 })

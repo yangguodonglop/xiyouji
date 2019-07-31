@@ -3,57 +3,57 @@
     <headers></headers>
     <div class="buy_con">
         <div class="item_con">
-            <div class="item_l">西柚机</div>
+            <div class="item_l">{{$t("index.buy_nav1")}}</div>
             <div class="item_r">
-                <div class="p1" @click="goParam()">参数</div>
-                <div class="p2 active" @click="goBuying()">购买</div>
+                <div class="p1" @click="goParam()">{{$t("index.buy_nav2")}}</div>
+                <div class="p2 active" @click="goBuying()">{{$t("index.buy_nav3")}}</div>
             </div>
         </div>
     </div>
     <div class="parameter">
         <div class="item_con1">
-            <div class="item_h2">产品参数</div>
+            <div class="item_h2">{{$t("parameter.item_nav1")}}</div>
             <div class="item_img"><img src="../../assets/images/param_01.png" alt=""></div>
             <div class="item_xh">
                 <div class="item_icon"></div>
-                <div class="item_text">黑曜石</div>
+                <div class="item_text">{{$t("parameter.item_nav2")}}</div>
             </div>
         </div>
         <div class="item_con2 item_con1">
-            <div class="item_h2 active">发烧级配置</div>
+            <div class="item_h2 active">{{$t("parameter.item1_nav1")}}</div>
             <div class="item_img">
                 <div class="img_con" style="margin-top:20px;">
                     <div class="item_boador">
                         <p><img src="../../assets/images/cpu_icon1.png" alt=""></p>
                         <p class="text_active1">CPU</p>
-                        <p class="text_active2">四核1.5GHZ</p>
+                        <p class="text_active2">{{$t("parameter.item1_nav2")}}</p>
                     </div>
                     <div class="item_boador">
                         <p><img src="../../assets/images/cpu_icon1_01.png" alt=""></p>
                         <p class="text_active1">RAM</p>
-                        <p class="text_active2">2GB DDR3</p>
+                        <p class="text_active2">{{$t("parameter.item1_nav3")}}</p>
                     </div>
                     <div class="item_boador">
                         <p><img src="../../assets/images/cpu_icon1_02.png" alt=""></p>
                         <p class="text_active1">ROM</p>
-                        <p class="text_active2">8GB eMMC</p>
+                        <p class="text_active2">{{$t("parameter.item1_nav4")}}</p>
                     </div>
                 </div>
                 <div class="img_con">
                     <div class="item_boador">
                         <p><img src="../../assets/images/cpu_icon1_03.png" alt=""></p>
                         <p class="text_active1">GPU</p>
-                        <p class="text_active2">Mali 450 </p>
+                        <p class="text_active2">{{$t("parameter.item1_nav4")}} </p>
                     </div>
                     <div class="item_boador">
                         <p><img src="../../assets/images/cpu_icon1_04.png" alt=""></p>
                         <p class="text_active1">HD</p>
-                        <p class="text_active2">1TB 5400转</p>
+                        <p class="text_active2">{{$t("parameter.item1_nav5")}}</p>
                     </div>
                     <div class="item_boador">
                         <p><img src="../../assets/images/hdmi_icon.png" alt=""></p>
                         <p class="text_active1">HDMI</p>
-                        <p class="text_active2">4K 60Hz HDCP</p>
+                        <p class="text_active2">{{$t("parameter.item1_nav6")}}</p>
                     </div>
                 </div>
             </div>
@@ -62,21 +62,21 @@
             </div>
         </div>
         <div class="item_con1 item_con3 item_con2">
-            <div class="item_h2">尺寸与重量</div>
+            <div class="item_h2">{{$t("parameter.item2_nav1")}}</div>
             <div class="item_img"><img src="../../assets/images/param_02active.png" alt=""></div>
             <div class="item_xh">
-                <div class="item_text">重量：1000g</div>
+                <div class="item_text" style="white-space: nowrap;">{{$t("parameter.item2_nav2")}}1000g</div>
             </div>
             <div class="item_bottom">
 
             </div>
         </div>
         <div class="item_con1 item_con4 item_con2">
-            <div class="item_h2">硬件配置</div>
+            <div class="item_h2">{{$t("parameter.item3_nav1")}}</div>
             <div class="item_img item_img_active">
                 <div><img src="../../assets/images/param_03.png" alt=""></div>
                 <div class="item_param">
-                    <p>CPU<span>四核1.5GHZ</span></p>
+                    <p>CPU<span>{{$t("parameter.item3_nav2")}}</span></p>
                     <p>GPU<span>Mali 450</span></p>
                     <p>RAM<span>2GB DDR3</span></p>
 
@@ -88,36 +88,36 @@
             </div>
         </div>
         <div class="item_con5 item_con2">
-            <div class="item_h2">接口配置</div>
+            <div class="item_h2">{{$t("parameter.item4_nav1")}}</div>
             <div class="item_p">
-                <p>RJ45x1<span>（千兆网1000Mbps）</span></p>
-                <p>USB3.0 ×2<span>支持多种扩展</span></p>
+                <p>RJ45x1<span>{{$t("parameter.item4_nav2")}}</span></p>
+                <p>USB3.0 ×2<span>{{$t("parameter.item4_nav3")}}</span></p>
             </div>
             <div class="item_bottom">
 
             </div>
         </div>
         <div class="item_con5 item_con2">
-            <div class="item_h2">其他配置</div>
+            <div class="item_h2">{{$t("parameter.item5_nav1")}}</div>
             <div class="item_p">
-                <p>电源适配器<span>DC ∮5.5mm,12V/1.5A</span></p>
-                <p>网线<span>1米标准线材 </span></p>
+                <p>{{$t("parameter.item5_nav2")}}<span>DC ∮5.5mm,12V/1.5A</span></p>
+                <p>{{$t("parameter.item5_nav3")}}<span>{{$t("parameter.item5_nav4")}} </span></p>
             </div>
             <div class="item_bottom">
 
             </div>
         </div>
         <div class="item_con5 item_con2">
-            <div class="item_h2">材质</div>
+            <div class="item_h2">{{$t("parameter.item6_nav2")}}</div>
             <div class="item_p">
-                <p>铝合金（表面喷砂）</p>
+                <p>{{$t("parameter.item6_nav3")}}</p>
             </div>
             <div class="item_bottom">
 
             </div>
         </div>
         <div class="item_con5 item_con2">
-            <div class="item_h2">系统</div>
+            <div class="item_h2">{{$t("parameter.item7_nav1")}}</div>
             <div class="item_p">
                 <p>Android7.1</p>
             </div>
@@ -126,7 +126,7 @@
             </div>
         </div>
         <div class="item_con5 ">
-            <div class="item_h2">指导价</div>
+            <div class="item_h2">{{$t("parameter.item8_nav1")}}</div>
             <div class="item_p">
                 <p>998RMB</p>
             </div>
@@ -210,10 +210,10 @@ export default {
                 align-items: center;
 
                 div {
-                    margin-right: 50px;
+                     margin-right: 50px;
                     cursor: pointer;
-                    width: 97px;
-                    height: 43px;
+                    width: auto;
+                    height: auto;
                     background: #ffffff;
                     border-radius: 22px;
                     font-size: 26px;
@@ -225,10 +225,12 @@ export default {
                     align-items: center;
                     text-align: center;
                     margin-right: 50px;
+                    padding: 10px;
+                    overflow: hidden;
 
                     &:hover {
-                        width: 97px;
-                        height: 43px;
+                        width: auto;
+                        height: auto;
                         background: rgba(36, 36, 36, 1);
                         border-radius: 22px;
                         font-size: 26px;
@@ -240,6 +242,8 @@ export default {
                         align-items: center;
                         text-align: center;
                         margin-right: 50px;
+                        padding: 10px;
+                        overflow: hidden;
 
                     }
                 }

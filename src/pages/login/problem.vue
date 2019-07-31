@@ -7,53 +7,48 @@
                 <!-- <img src="../../assets/images/income_01.png" alt=""> -->
             </div>
             <div class="problem_con" id="problem_active1">
-                <div class="problem_title">问题&反馈</div>
+                <div class="problem_title">{{$t("problem.item_nav1")}}</div>
                 <div class="problem_list">
                     <div class="title">
-                        常见问题
+                        {{$t("problem.item1_nav1")}}
                     </div>
                     <el-collapse v-model="activeNames" @change="handleChange">
-                        <el-collapse-item title="一个西柚机账号可以多人通过APP共享使用吗？" name="1">
-                            <div>目前一个西柚机同一时间只能被一个用户绑定使用，但可以通过解绑再绑定给其他用户使用</div>
+                        <el-collapse-item :title="$t('problem.item1_nav2')" name="1">
+                            <div>{{$t("problem.item2_nav2")}}</div>
                         </el-collapse-item>
-                        <el-collapse-item title="更换了手机号如何更换我的西柚机账号？" name="2">
-                            <div>在APP的个人信息设置中可进行手机号更换，更换手机号后，使用新手机号登录即可查看原手机的绑定的西柚机相关信息</div>
+                        <el-collapse-item :title="$t('problem.item1_nav3')" name="2">
+                            <div>{{$t("problem.item2_nav3")}}</div>
                         </el-collapse-item>
-                        <el-collapse-item title="一个账号可以在多个手机上同时登录吗?" name="3">
-                            <div>为了保障用户的登录安全，我们限定了同一时间只能在一个手机设备上进行APP的操作</div>
+                        <el-collapse-item :title="$t('problem.item1_nav4')" name="3">
+                            <div>{{$t("problem.item2_nav4")}}</div>
 
                         </el-collapse-item>
-                        <el-collapse-item title="西柚机需要外接硬盘吗？" name="4">
-                            <div>西柚机内部自带硬盘，不需要外接硬盘</div>
+                        <el-collapse-item :title="$t('problem.item1_nav5')" name="4">
+                            <div>{{$t("problem.item2_nav5")}}</div>
                         </el-collapse-item>
                     </el-collapse>
-                    <!-- <van-collapse v-model="activeNames">
-                        <van-collapse-item title="一个西柚机账号可以多人通过APP共享使用吗？" name="1">目前一个西柚机同一时间只能被一个用户绑定使用，但可以通过解绑再绑定给其他用户使用</van-collapse-item>
-                        <van-collapse-item title="更换了手机号如何更换我的西柚机账号？" name="2">在APP的个人信息设置中可进行手机号更换，更换手机号后，使用新手机号登录即可查看原手机的绑定的西柚机相关信息</van-collapse-item>
-                        <van-collapse-item title="一个账号可以在多个手机上同时登录吗?" name="3">为了保障用户的登录安全，我们限定了同一时间只能在一个手机设备上进行APP的操作</van-collapse-item>
-                        <van-collapse-item title="西柚机需要外接硬盘吗？" name="4">西柚机内部自带硬盘，不需要外接硬盘</van-collapse-item>
-                    </van-collapse> -->
+                 
                 </div>
             </div>
             <div class="problem_con1" id="problem_active2">
                 <div class="problem_total">
-                    <div class="problem_title">意见反馈</div>
+                    <div class="problem_title">{{$t("problem.item3_nav2")}}</div>
                     <div class="problem_sumit">
                         <div class="item_input">
-                            <input type="text" v-model="userName" placeholder="姓名">
+                            <input type="text" v-model="userName"  :placeholder="$t('problem.item3_nav3')">
                         </div>
 
                         <div class="item_input">
-                            <input type="text" v-model="userTel" placeholder="联系方式">
+                            <input type="text" v-model="userTel" :placeholder="$t('problem.item3_nav4')">
                         </div>
 
                     </div>
                     <div class="problem_textarea">
-                        <textarea placeholder="问题描述" v-model="userquestion"></textarea>
-                        <p>若需要得到回复，请填写联络方式</p>
+                        <textarea v-model="userquestion" :placeholder="$t('problem.item3_nav5')"></textarea>
+                        <p>{{$t("problem.item3_nav6")}}</p>
                     </div>
                     <div class="item_bottom">
-                        <div class="item_button" @click="onSumit()">提交</div>
+                        <div class="item_button" @click="onSumit()">{{$t("problem.item3_nav7")}}</div>
                     </div>
                 </div>
             </div>
@@ -62,29 +57,29 @@
         <div class="xy_footer">
             <div class="xy_footer_con">
                 <div class="item">
-                    <div class="item_h2">购买方式</div>
-                    <div class="item_con" @click="goLink2()">点击购买</div>
+                    <div class="item_h2">{{$t("index.foorer_h2_nav1")}}</div>
+                    <div class="item_con" @click="goLink2()">{{$t("index.foorer_item_nav1")}}</div>
 
                 </div>
                 <div class="item">
-                    <div class="item_h2">服务支持</div>
-                    <div class="item_con" @click="goLink3()">常见问题</div>
-                    <div class="item_con" @click="goLink4()">意见反馈</div>
+                    <div class="item_h2">{{$t("index.foorer_h2_nav2")}}</div>
+                    <div class="item_con" @click="goLink3()">{{$t("index.foorer_item1_nav1")}}</div>
+                    <div class="item_con" @click="goLink4()">{{$t("index.foorer_item1_nav2")}}</div>
                 </div>
                 <div class="item">
-                    <div class="item_h2">关于我们</div>
-                    <div class="item_con" @click="goto('privacy','problem_active3')">隐私声明</div>
-                    <div class="item_con" @click="goto('protocol','problem_active4')">用户协议</div>
+                    <div class="item_h2">{{$t("index.foorer_h2_nav3")}}</div>
+                    <div class="item_con" @click="goto('privacy','problem_active3')">{{$t("index.foorer_item2_nav1")}}</div>
+                    <div class="item_con" @click="goto('protocol','problem_active4')">{{$t("index.foorer_item2_nav2")}}</div>
 
                 </div>
                 <div class="item">
-                    <div class="item_h2">联系我们</div>
-                    <div class="item_con">在线QQ</div>
-                    <div class="item_con">231155479</div>
-                    <div class="item_con">微信</div>
-                    <div class="item_con">12345667892</div>
-                    <div class="item_con">客服电话</div>
-                    <div class="item_con">01234567(9:00-18:00)</div>
+                    <div class="item_h2">{{$t("index.foorer_h2_nav4")}}</div>
+                    <div class="item_con">{{$t("index.foorer_item3_nav1")}}</div>
+                    <div class="item_con">{{$t("index.foorer_item3_nav2")}}</div>
+                    <div class="item_con">{{$t("index.foorer_item3_nav3")}}</div>
+                    <div class="item_con">{{$t("index.foorer_item3_nav4")}}</div>
+                    <div class="item_con">{{$t("index.foorer_item3_nav5")}}</div>
+                    <div class="item_con">{{$t("index.foorer_item3_nav6")}}(9:00-18:00)</div>
                 </div>
 
             </div>
@@ -137,7 +132,8 @@ export default {
             param.login_token = localStorage.getItem('userToken')
             if (param.login_token == null || param.login_token == "") {
                 this.$message({
-                    message: '请登录后在提交意见反馈',
+                    message: this.$t('prompt.item_nav1'),
+                    //message: "",
                     type: 'error'
                 });
                 return false
@@ -150,12 +146,12 @@ export default {
             savequestion(param).then(res => {
                 if (res.status != 0) {
                     this.$message({
-                        message: '网络错误，请重新提交',
+                        message: this.$t('prompt.item_nav2'),
                         type: 'error'
                     });
                 } else {
                     this.$message({
-                        message: '提交成功',
+                        message: this.$t('prompt.item_nav3'),
                         type: 'success'
                     });
 

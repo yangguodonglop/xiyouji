@@ -7,29 +7,40 @@
                     <img src="../../assets/images/pc_logo.png" alt="">
                 </div>
                 <div class="xy_logo_nav">
-                    <div class="item" @click="returnCom5">首页</div>
-                    <div class="item item_active1" @click="returnCom">产品介绍</div>
-                    <div class="item" @click="returnCom7">推广计划</div>
-                    <div class="item" @click="returnCom1">APP下载</div>
-                     <div class="item" @click="returnCom4">收益介绍</div> 
+                    <div class="item" @click="returnCom5">{{$t("index.hear_nav1")}}</div>
+                    <div class="item item_active1" @click="returnCom">{{$t("index.hear_nav2")}}</div>
+                    <div class="item" @click="returnCom7">{{$t("index.hear_nav3")}}</div>
+                    <div class="item" @click="returnCom1">{{$t("index.hear_nav4")}}</div>
+                    <div class="item" @click="returnCom4">{{$t("index.hear_nav5")}}</div>
 
-                    <div class="item" @click="returnCom6">联系我们</div>
-                    <div class="item" v-show="!loginStatus" @click="returnCom3">登录</div>
+                    <div class="item" @click="returnCom6">{{$t("index.hear_nav6")}}</div>
+                    <div class="item" v-show="!loginStatus" @click="returnCom3">{{$t("index.hear_nav7")}}</div>
                     <div class="item item_active" v-show="loginStatus" @click="goUsercenter()">
                         <img src="../../assets/images/timg1.png" width="50" height="50">
                         <!-- <div>{{this.username}}</div> -->
                     </div>
+                    <div class="item">
+                        <el-dropdown trigger="click" @command="handleCommand">
+                            <span class="el-dropdown-link">
+                                {{nowlangActive}}<i class="el-icon-arrow-down el-icon--right"></i>
+                            </span>
+                            <el-dropdown-menu slot="dropdown">
+                                <el-dropdown-item command="zh">简体中文</el-dropdown-item>
+                                <el-dropdown-item command="en">Eenlish</el-dropdown-item>
 
+                            </el-dropdown-menu>
+                        </el-dropdown>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- <headers></headers> -->
         <div class="buy_con">
             <div class="item_con">
-                <div class="item_l">西柚机</div>
+                <div class="item_l">{{$t("index.buy_nav1")}}</div>
                 <div class="item_r">
-                    <div class="p1" @click="goParam()">参数</div>
-                    <div class="p2 active" @click="goBuying()">购买</div>
+                    <div class="p1" @click="goParam()">{{$t("index.buy_nav2")}}</div>
+                    <div class="p2 active" @click="goBuying()">{{$t("index.buy_nav3")}}</div>
                 </div>
             </div>
         </div>
@@ -37,21 +48,21 @@
             <div class="banner_con_item">
                 <div class="item_con">
                     <div class="item_p  item_p_active1">
-                        <p class="p1"> 西柚机</p>
-                        <p class="p2"> 共享经济时代的智能硬盘</p>
-                        <p class="p3"> 998元</p>
+                        <p class="p1"> {{$t("index.banner1_nav1")}}</p>
+                        <p class="p2"> {{$t("index.banner1_nav2")}}</p>
+                        <p class="p3"> {{$t("index.banner1_nav3")}}</p>
                     </div>
 
                 </div>
             </div>
             <div class="banner_con_item1" id="comment">
                 <div class="item_con">
-                    <div class="item_h">什么是西柚机?</div>
+                    <div class="item_h"> {{$t("index.banner2_nav1")}}</div>
                     <div class="item_text item_text_active1">
-                        <p>是全球共享经济时代背景诞生的一款智能硬件产品</p>
-                        <p>用户在购买了西柚机后</p>
-                        <p>简单部署后即可共享出闲置网络带、宽存储空间</p>
-                        <P>赚取积分奖励，并进行各种价值兑换</p>
+                        <p>{{$t("index.banner2_nav2")}}</p>
+                        <p>{{$t("index.banner2_nav3")}}</p>
+                        <p>{{$t("index.banner2_nav4")}}</p>
+                        <P>{{$t("index.banner2_nav5")}}</p>
 
                     </div>
                 </div>
@@ -63,12 +74,12 @@
                 <div class="item_con">
                     <div class="item_p">
 
-                        <div class="item_h">强悍的硬件性能</div>
+                        <div class="item_h">{{$t("index.banner3_nav1")}}</div>
                         <div class="item_text">
-                            <p>1T存储空间+RK3328 </p>
-                            <p>android7.1操作系统</p>
-                            <p>24小时高效的贡献闲置资源</p>
-                            <P>资源最大化收益率</p>
+                            <p>{{$t("index.banner3_nav2")}} </p>
+                            <p>{{$t("index.banner3_nav3")}}</p>
+                            <p>{{$t("index.banner3_nav4")}}</p>
+                            <P>{{$t("index.banner3_nav5")}}</p>
 
                         </div>
 
@@ -79,13 +90,13 @@
             <div class="banner_con_item5">
                 <div class="item_con">
                     <div class="item_p">
-                        <div class="item_h">稳定的收益来源</div>
+                        <div class="item_h">{{$t("index.banner4_nav1")}}</div>
                         <div class="item_text">
-                            <p>已达成合作意向企业</p>
-                            <p>直播点播、CDN加速</p>
-                            <p>热点资源分发业务</p>
-                            <P>将提供稳定而持久的收益保障</p>
-                            <p class="active"><a href="#" style="font-weight: bold" @click="goIncome()">收益是什么?</a></p>
+                            <p>{{$t("index.banner4_nav2")}}</p>
+                            <p>{{$t("index.banner4_nav3")}}</p>
+                            <p>{{$t("index.banner4_nav4")}}</p>
+                            <P>{{$t("index.banner4_nav5")}}</p>
+                            <p class="active"><a href="#" style="font-weight: bold" @click="goIncome()">{{$t("index.banner4_nav6")}}</a></p>
                         </div>
 
                     </div>
@@ -94,12 +105,12 @@
             <div class="banner_con_item4">
                 <div class="item_con">
                     <div class="item_p">
-                        <div class="item_h">强大的底层技术支撑</div>
+                        <div class="item_h">{{$t("index.banner5_nav1")}}</div>
                         <div class="item_text">
-                            <p>自主研发西柚机分布式存储网络</p>
-                            <p>高可用性、安全私密、高速</p>
-                            <p>实现共享资源</p>
-                            <P>高质量、高效率、无损耗的利用</p>
+                            <p>{{$t("index.banner5_nav1")}}</p>
+                            <p>{{$t("index.banner5_nav2")}}</p>
+                            <p>{{$t("index.banner5_nav3")}}</p>
+                            <P>{{$t("index.banner5_nav4")}}</p>
                         </div>
                     </div>
                 </div>
@@ -108,10 +119,10 @@
             <div class=" banner_con_item6" id="banner_con_item6">
                 <div class="item_con">
                     <div class="item_p">
-                        <div class="item_h">共享资源、共赢未来</div>
+                        <div class="item_h">{{$t("index.banner6_nav1")}}</div>
                         <div class="item_text">
-                            <p>基于网络资源共享技术</p>
-                            <p>将闲置带宽及存储共享给企业或个人</p>
+                            <p>{{$t("index.banner6_nav2")}}</p>
+                            <p>{{$t("index.banner6_nav3")}}</p>
                         </div>
 
                     </div>
@@ -121,10 +132,10 @@
             <div class="banner_con_item7" id="comment1">
                 <div class="item_con">
                     <div class="item_p">
-                        <div class="item_h">手机APP</div>
+                        <div class="item_h">{{$t("index.banner7_nav1")}}</div>
                         <div class="item_text">
-                            <p>随时随地查看积分收益</p>
-                            <p>管理西柚机</p>
+                            <p>{{$t("index.banner7_nav2")}}</p>
+                            <p>{{$t("index.banner7_nav3")}}</p>
                         </div>
                         <div class="code">
                             <div class="code_l">
@@ -135,13 +146,13 @@
                             <div class="code_r" style="margin-left:50px;">
                                 <div class="code_r_con" v-bind:class="{ active22: androidstatus }">
                                     <p> <img src="../../assets/images/ios-icon1.png" alt="" v-if="androidstatus"></p>
-                                    <p> <img src="../../assets/images/ios-icon.png" alt=""  v-if="iponestatus"></p>
-                                    <p class="p_text" @click="changecode()">Iphone下载</P>
+                                    <p> <img src="../../assets/images/ios-icon.png" alt="" v-if="iponestatus"></p>
+                                    <p class="p_text" @click="changecode()">{{$t("index.banner7_nav4")}}</P>
                                 </div>
                                 <div class="code_r_con" v-bind:class="{ active11: iponestatus }">
                                     <p> <img v-if="androidstatus" src="../../assets/images/android-icon1.png" alt=""></p>
                                     <p> <img v-if="iponestatus" src="../../assets/images/android-icon.png" alt=""></p>
-                                    <p class="p_text"  @click="changecode1()">Android下载</p>
+                                    <p class="p_text" @click="changecode1()">{{$t("index.banner7_nav5")}}</p>
                                 </div>
                             </div>
                         </div>
@@ -176,7 +187,7 @@ export default {
     data() {
         return {
             _dom: "",
-        
+
             playStatus: '',
             muteStatus: '',
             isMute: true,
@@ -185,7 +196,8 @@ export default {
             username: "",
             dialogVisible: false,
             iponestatus: true,
-            androidstatus: false
+            androidstatus: false,
+            nowlangActive: "简体中文"
 
         };
     },
@@ -195,7 +207,16 @@ export default {
         })
     },
     mounted: function () {
-        //alert($(".item_text").text())
+
+        this.nowlangActive = localStorage.getItem('nowlangActive')
+        if (this.nowlangActive == null) {
+            this.nowlangActive = "简体中文"
+        }
+        this.$i18n.locale  = localStorage.getItem('langActive')
+         if(this.$i18n.locale ==null){
+             this.$i18n.locale ="zh"
+         }
+         
         let that = this;
         that.$nextTick(function () {
             window.addEventListener('scroll', that.handleScroll)
@@ -216,6 +237,29 @@ export default {
 
     },
     methods: {
+        //选择语言
+        handleCommand(command) {
+            console.log(command)
+            let langActive = command
+             localStorage.setItem('langActive', langActive)
+            //langActive = this.$i18n.locale === 'zh' ? 'en' : 'zh'
+            // this.$i18n.locale = langActive
+            if (langActive == "zh") {
+                this.nowlangActive = "简体中文"
+                localStorage.setItem('nowlangActive', this.nowlangActive)
+
+            } else {
+                this.nowlangActive = "English"
+                localStorage.setItem('nowlangActive', this.nowlangActive)
+
+            }
+            this.$i18n.locale = langActive
+
+        },
+        lang(locale) {
+
+            // this.msg = this.$t('common.msg')
+        },
         changecode() {
             this.iponestatus = false
             this.androidstatus = true
@@ -225,8 +269,7 @@ export default {
             this.androidstatus = false
         },
         handleScroll(e) {
-           // console.log(e.target.scrollTop)
-            
+            // console.log(e.target.scrollTop)
 
             if (e.target.scrollTop >= 900) {
                 // .ification .colors0 img .ification .colors0 .dis
@@ -458,8 +501,8 @@ export default {
                 div {
                     margin-right: 50px;
                     cursor: pointer;
-                    width: 97px;
-                    height: 43px;
+                    width: auto;
+                    height: auto;
                     background: #ffffff;
                     border-radius: 22px;
                     font-size: 26px;
@@ -471,10 +514,12 @@ export default {
                     align-items: center;
                     text-align: center;
                     margin-right: 50px;
+                    padding: 10px;
+                    overflow: hidden;
 
                     &:hover {
-                        width: 97px;
-                        height: 43px;
+                        width: auto;
+                        height: auto;
                         background: rgba(36, 36, 36, 1);
                         border-radius: 22px;
                         font-size: 26px;
@@ -486,6 +531,8 @@ export default {
                         align-items: center;
                         text-align: center;
                         margin-right: 50px;
+                        padding: 10px;
+                        overflow: hidden;
 
                     }
                 }
@@ -831,17 +878,21 @@ export default {
                                 font-size: 26px;
                             }
                         }
-                        .active11{
+
+                        .active11 {
                             background: #000000;
-                             .p_text {
+
+                            .p_text {
                                 color: #ffffff;
                                 font-size: 26px;
                             }
 
                         }
-                         .active22{
+
+                        .active22 {
                             background: #000000;
-                             .p_text {
+
+                            .p_text {
                                 color: #ffffff;
                                 font-size: 26px;
                             }
@@ -919,7 +970,7 @@ export default {
     background: rgba(36, 36, 36, 1);
 
     .xy_header_con {
-        width: 1150px;
+        width: 1340px;
         height: 80px;
         margin: 0 auto;
         .publicbetween;

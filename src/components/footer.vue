@@ -4,29 +4,29 @@
     <div class="xy_footer">
         <div class="xy_footer_con">
             <div class="item">
-                <div class="item_h2">购买方式</div>
-                <div class="item_con" @click="goLink2()">点击购买</div>
+                <div class="item_h2">{{$t("index.foorer_h2_nav1")}}</div>
+                <div class="item_con" @click="goLink2()">{{$t("index.foorer_item_nav1")}}</div>
 
             </div>
             <div class="item">
-                <div class="item_h2">服务支持</div>
-                <div class="item_con" @click="goto('problem','problem_active1')">常见问题</div>
-                <div class="item_con" @click="goto('problem','problem_active2')">意见反馈</div>
+                <div class="item_h2">{{$t("index.foorer_h2_nav2")}}</div>
+                <div class="item_con" @click="goto('problem','problem_active1')">{{$t("index.foorer_item1_nav1")}}</div>
+                <div class="item_con" @click="goto('problem','problem_active2')">{{$t("index.foorer_item1_nav2")}}</div>
             </div>
             <div class="item">
-                <div class="item_h2">关于我们</div>
-                <div class="item_con"  @click="goto('privacy','problem_active3')">隐私声明</div>
-                <div class="item_con" @click="goto('protocol','problem_active4')">用户协议</div>
+                <div class="item_h2">{{$t("index.foorer_h2_nav3")}}</div>
+                <div class="item_con"  @click="goto('privacy','problem_active3')">{{$t("index.foorer_item2_nav1")}}</div>
+                <div class="item_con" @click="goto('protocol','problem_active4')">{{$t("index.foorer_item2_nav2")}}</div>
 
             </div>
             <div class="item">
-                <div class="item_h2">联系我们</div>
-                <div class="item_con">在线QQ</div>
-                <div class="item_con">231155479</div>
-                <div class="item_con">微信</div>
-                <div class="item_con">12345667892</div>
-                <div class="item_con">客服电话</div>
-                <div class="item_con">01234567(9:00-18:00)</div>
+                <div class="item_h2">{{$t("index.foorer_h2_nav4")}}</div>
+                <div class="item_con">{{$t("index.foorer_item3_nav1")}}</div>
+                <div class="item_con">{{$t("index.foorer_item3_nav2")}}</div>
+                <div class="item_con">{{$t("index.foorer_item3_nav3")}}</div>
+                <div class="item_con">{{$t("index.foorer_item3_nav4")}}</div>
+                <div class="item_con">{{$t("index.foorer_item3_nav5")}}</div>
+                <div class="item_con">{{$t("index.foorer_item3_nav6")}}</div>
             </div>
 
         </div>
@@ -126,7 +126,7 @@ export default {
         }
 
         .item_con {
-            font-size: 18px;
+            font-size: 16px;
             color: #F7F7F7;
             text-align: left;
             padding-left: 0rem;

@@ -5,18 +5,27 @@
             <img src="../assets/images/pc_logo.png" alt="" @click="returnComactive3">
         </div>
         <div class="xy_logo_nav">
-            <div class="item" @click="goto('/','comment4')">首页</div>
-            <div class="item item_active1" @click="goto('/','comment')">产品介绍</div>
-            <div class="item" @click="returnCom7">推广计划</div>
-            <div class="item" @click="goto('/','comment1')">APP下载</div>
-             <div class="item" @click="returnComactive2">收益介绍</div> 
-
-            <div class="item" @click="goto('/','comment3')">联系我们</div>
-
-            <div class="item" v-show="!loginStatus" @click="returnComactive1">登录</div>
+            <div class="item" @click="goto('/','comment4')">{{$t("index.hear_nav1")}}</div>
+            <div class="item item_active1" @click="goto('/','comment')">{{$t("index.hear_nav2")}}</div>
+            <div class="item" @click="returnCom7">{{$t("index.hear_nav3")}}</div>
+            <div class="item" @click="goto('/','comment1')">{{$t("index.hear_nav4")}}</div>
+            <div class="item" @click="returnComactive2">{{$t("index.hear_nav5")}}</div>
+            <div class="item" @click="goto('/','comment3')">{{$t("index.hear_nav6")}}</div>
+            <div class="item" v-show="!loginStatus" @click="returnComactive1">{{$t("index.hear_nav7")}}</div>
             <div class="item item_active" v-show="loginStatus" @click="goUsercenter()">
                 <img src="../assets/images/timg1.png" width="50" height="50">
-                <!-- <div>{{this.username}}</div> -->
+            </div>
+            <div class="item">
+                <el-dropdown trigger="click" @command="handleCommand">
+                    <span class="el-dropdown-link">
+                        {{nowlangActive}}<i class="el-icon-arrow-down el-icon--right"></i>
+                    </span>
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item command="zh">简体中文</el-dropdown-item>
+                        <el-dropdown-item command="en">Eenlish</el-dropdown-item>
+
+                    </el-dropdown-menu>
+                </el-dropdown>
             </div>
 
         </div>
@@ -29,11 +38,16 @@ export default {
     data() {
         return {
             loginStatus: false,
-            username: ""
+            username: "",
+            nowlangActive: "简体中文"
 
         }
     },
     mounted: function () {
+        this.nowlangActive = localStorage.getItem('nowlangActive')
+        if (this.nowlangActive == null) {
+            this.nowlangActive = "简体中文"
+        }
         this.loginStatus = localStorage.getItem('loginStatus')
         if (this.loginStatus == null) {
             this.loginStatus = false
@@ -43,6 +57,23 @@ export default {
 
     },
     methods: {
+        //选择语言
+        handleCommand(command) {
+          
+            let langActive = command
+            ///langActive = this.$i18n.locale === 'zh' ? 'en' : 'zh'
+            if (langActive == "zh") {
+                this.nowlangActive = "简体中文"
+                localStorage.setItem('nowlangActive', this.nowlangActive)
+
+            } else {
+                this.nowlangActive = "English"
+                localStorage.setItem('nowlangActive', this.nowlangActive)
+
+            }
+            this.$i18n.locale = langActive
+
+        },
         goto(page, selectId) {
             var path = page;
             var selectId = selectId;
@@ -82,8 +113,8 @@ export default {
             })
 
         },
-        goUsercenter(){
-             this.$router.push({
+        goUsercenter() {
+            this.$router.push({
                 path: "/management"
 
             })
@@ -105,7 +136,7 @@ export default {
     background: rgba(36, 36, 36, 1);
 
     .xy_header_con {
-        width: 1150px;
+        width: 1340px;
         height: 80px;
         margin: 0 auto;
         .publicbetween;

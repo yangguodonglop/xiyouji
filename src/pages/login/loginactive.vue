@@ -7,23 +7,23 @@
                 <div class="login_con">
                     <div class="login_con_text">
                         <div class="item_l">
-                            <p class="p1">西柚机</p>
-                            <p class="p2">共享经济时代的智能硬盘</p>
+                            <p class="p1">{{$t("loginactive.item_nav1")}}</p>
+                            <p class="p2">{{$t("loginactive.item_nav2")}}</p>
                         </div>
                         <div class="item_r">
                             <div class="item_r_con">
-                                <div class="xy_login_h2">登录</div>
+                                <div class="xy_login_h2">{{$t("loginactive.item_nav3")}}</div>
                                 <div class="xy_input_item">
-                                    <input type="text" placeholder="请输入手机号" v-model="user_tel" maxlength="11">
+                                    <input type="text" :placeholder="$t('loginactive.item_nav4')" v-model="user_tel" maxlength="11">
                                 </div>
                                 <div class="xy_input_item">
-                                    <input type="text" class="active" maxlength="6" placeholder="请输入短信验证码" v-model="user_passwd">
-                                    <div v-show="show" class="login_yzm" @click="getCode">获取验证码</div>
+                                    <input type="text" class="active" maxlength="6" :placeholder="$t('loginactive.item_nav5')" v-model="user_passwd">
+                                    <div v-show="show" class="login_yzm" @click="getCode">{{$t("loginactive.item_nav6")}}</div>
                                     <div v-show="!show" class="login_yzm">{{count}} s</div>
 
                                 </div>
                                 <div class="xy_input_item">
-                                    <div class="login_sumit" @click="goUsercenter()">登录</div>
+                                    <div class="login_sumit" @click="goUsercenter()">{{$t("loginactive.item_nav7")}}</div>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +66,7 @@ export default {
             param.user_name = this.user_tel
             if (this.user_passwd == "") {
                 this.$message({
-                    message: '请输入正确验证码',
+                    message: this.$t('prompt.item_nav6'),
                     type: 'error'
                 });
                 return false;
@@ -74,7 +74,7 @@ export default {
             login(param).then(res => {
                 if (res.status != 0) {
                     this.$message({
-                        message: '网络错误，请重新请求',
+                        message: this.$t('prompt.item_nav4'),
                         type: 'error'
                     });
                 } else {
@@ -93,12 +93,11 @@ export default {
                 }
 
             }).catch(error => {
-                if (res.status != 0) {
-                    this.$message({
-                        message: '网络错误，请重新请求',
-                        type: 'error'
-                    });
-                }
+
+                this.$message({
+                    message: this.$t('prompt.item_nav4'),
+                    type: 'error'
+                });
 
             })
         },
@@ -109,14 +108,15 @@ export default {
                 param.login_token = ""
             if (this.user_tel == "") {
                 this.$message({
-                    message: '请输入手机号码',
+                    message: this.$t('prompt.item_nav5'),
+
                     type: 'error'
                 });
                 return false;
             }
             if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.user_tel))) {
                 this.$message({
-                    message: '请输入手机号码',
+                    message: this.$t('prompt.item_nav5'),
                     type: 'error'
                 });
                 return false;
@@ -124,7 +124,7 @@ export default {
             get_code(param).then(res => {
                 if (res.status != 0) {
                     this.$message({
-                        message: '网络错误，请重新请求',
+                        message: this.$t('prompt.item_nav4'),
                         type: 'error'
                     });
                 } else {
@@ -145,12 +145,11 @@ export default {
                 }
 
             }).catch(error => {
-                if (res.status != 0) {
-                    this.$message({
-                        message: '网络错误，请重新请求',
-                        type: 'error'
-                    });
-                }
+
+                this.$message({
+                    message: this.$t('prompt.item_nav4'),
+                    type: 'error'
+                });
 
             })
 
@@ -166,7 +165,7 @@ export default {
                 console.log(res)
                 if (res.status != 0) {
                     this.$message({
-                        message: '网络错误，请重新请求',
+                        message: this.$t('prompt.item_nav4'),
                         type: 'error'
                     });
                 } else {
@@ -174,12 +173,12 @@ export default {
                     localStorage.setItem('nowusername', nowusername)
                     let userToken = res.data.login_token
                     localStorage.setItem('userToken', userToken)
-                    
+
                 }
 
             }).catch(error => {
                 this.$message({
-                    message: '网络错误，请重新请求',
+                    message: this.$t('prompt.item_nav4'),
                     type: 'error'
                 });
 
@@ -222,13 +221,15 @@ export default {
                 margin-top: 200px;
 
                 .login_con_text {
-                    width: 900px;
+                    width: 1000px;
                     height: auto;
                     float: right;
                     display: flex;
                     justify-content: space-between;
 
                     .item_l {
+                        width: 500px;
+
                         p {
                             color: #000000;
                             font-size: 72px;

@@ -5,7 +5,7 @@
         <div class="buying">
           
             <div class="buying_con">
-             暂未开放购买
+             {{$t("buying.item_con1_nav1")}}
             </div>
 
         </div>
